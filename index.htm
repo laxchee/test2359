@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['You have', 'You owe']
+        },
+        credits: {
+            enabled: true
+        },
+        series: [{
+            name: 'John',
+            data: [{y: 100, color: 'rgb(23,98,38)' }, {y:-80 , color: '#f2bc27'}]
+        }, {
+            name: 'Jane',
+            data: [0, {y:80 , color: '#cc0000'}]
+        }]
+    });
+    console.log($('rect'));
+    $('.highcharts-series-group .highcharts-tracker:eq( 0 ) rect:eq( 0 )').attr({ width : 200 , x : 30 });
+    $('.highcharts-series-group .highcharts-tracker:eq( 0 ) rect:eq( 1 )').attr({ width : 100 , x : 293});
+    $('.highcharts-series-group .highcharts-tracker:eq( 1 ) rect:eq( 1 )').attr({ width : 100 , x : 393 });
+    $('.highcharts-legend').hide();
+    $('.highcharts-axis text').empty().append('Percentage');
+    console.log('rect');
+
+});
+    
+
+		</script>
+	</head>
+	<body>
+<script src="js/highcharts.js"></script>
+<!-- <script src="../../js/modules/exporting.js"></script> -->
+
+<div id="container" style="width: 600px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
